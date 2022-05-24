@@ -14,103 +14,103 @@ export default function SignUpPage(props) {
     username: '',
     email: '',
     password: '',
-    passwordConfirm: '',
+    passwordConfirm: ''
   })
 
   const [selectedFile, setSelectedFile] = useState('');
 
+
+  function handleChange(e){
+    setState({
+      ...state, 
+      [e.target.name]: e.target.value
+    })
+  }
+
+  function handleFileInput(e){
+    console.log(e.target.files);
+    setSelectedFile(e.target.files[0]);
+  }
+
   async function handleSubmit(e){
     e.preventDefault()
     
-    const formData = new FormData()
-    formData.append('photo', selectedFile)
+    const formData = new FormData();
+    formData.append('photo', selectedFile);
     
     for (let fieldName in state){
-      console.log(fieldName, state[fieldName])
       formData.append(fieldName, state[fieldName])
     }
    
     try {
         console.log(formData.forEach((item) => console.log(item)))
         
-        await userService.signup(formData);
+        await userService.signup(formData)
+        props.handleSignUpOrLogin();
+        navigate('/')
 
-      } catch (err) {
-
-        console.log(err.message)
+      } catch(err){
+        console.log(err.message);
         setError(err.message)
       }
-  }
+  
+    }
 
 
-  function handleChange(e){
-    setState({
-      ...state,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  function handleFileInput(e){
-    console.log(e.target.files)
-    setSelectedFile(e.target.files[0])
-  }
-
-
-  return (
-    <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
-   <Grid.Column style={{ maxWidth: 450 }}>
-     <Header as="h2" color="teal" textAlign="center">
-       <Image src="https://labellefoundation.org/wp-content/uploads/2022/03/cropped-Labelle_Logo_Desing_Only.png" /> Sign Up
-     </Header>
-     <Form autoComplete="off" onSubmit={handleSubmit}>
-       <Segment stacked>
-         <Form.Input
-           name="username"
-           placeholder="Username"
-           value={state.username}
-           onChange={handleChange}
-           required
-         />
-         <Form.Input
-           type="email"
-           name="email"
-           placeholder="Email"
-           value={state.email}
-           onChange={handleChange}
-           required
-         />
-         <Form.Input
-           name="password"
-           type="password"
-           placeholder="Password"
-           value={state.password}
-           onChange={handleChange}
-           required
-         />
-         <Form.Input
-           name="passwordConfirm"
-           type="password"
-           placeholder="Confirm Password"
-           value={state.passwordConfirm}
-           onChange={handleChange}
-           required
-         />
-         <Form.Field>
-           <Form.Input
-             type="file"
-             name="photo"
-             placeholder="upload image"
-             onChange={handleFileInput}
-           />
-         </Form.Field>
-         <Button color="blue" type="submit" className="btn">
-           Signup
-         </Button>
-       </Segment>
-       {error ? <ErrorMessage error={error} /> : null}
-     </Form>
-   </Grid.Column>
- </Grid>
-
-   );
-  }
+return (
+  <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
+    <Grid.Column style={{ maxWidth: 450 }}>
+      <Header as="h2" color="blue" textAlign="center">
+        <Image src="https://labellefoundation.org/wp-content/uploads/2022/03/cropped-Labelle_Logo_Desing_Only.png" /> Sign Up
+      </Header>
+      <Form autoComplete="off" onSubmit={handleSubmit}>
+        <Segment stacked>
+          <Form.Input
+            name="username"
+            placeholder="Username"
+            value={state.username}
+            onChange={handleChange}
+            required
+          />
+          <Form.Input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={state.email}
+            onChange={handleChange}
+            required
+          />
+          <Form.Input
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={state.password}
+            onChange={handleChange}
+            required
+          />
+          <Form.Input
+            name="passwordConfirm"
+            type="password"
+            placeholder="Confirm Password"
+            value={state.passwordConfirm}
+            onChange={handleChange}
+            required
+          />
+          <Form.Field>
+            <Form.Input
+              type="file"
+              name="photo"
+              placeholder="upload image"
+              onChange={handleFileInput}
+            />
+          </Form.Field>
+          <Button color="blue" type="submit" className="btn">
+            Signup
+          </Button>
+        </Segment>
+        {error ? <ErrorMessage error={error} /> : null}
+      </Form>
+    </Grid.Column>
+  </Grid>
+);
+}

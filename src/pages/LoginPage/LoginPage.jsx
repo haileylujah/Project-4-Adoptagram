@@ -8,11 +8,11 @@ import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui
 
 
 export default function LoginPage(props) {
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
   const [state, setState] = useState({
-    username: '',
-    password: '',
-});
+    username: "",
+    password: "",
+  });
 
   const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ export default function LoginPage(props) {
     try {
       await userService.login(state);
       props.handleSignUpOrLogin();
-      navigate('/');
+      navigate("/");
     } catch (err) {
       setError(err.message);
     }
@@ -39,12 +39,12 @@ export default function LoginPage(props) {
     <>
       <Grid
         textAlign="center"
-        style={{ height: "100vh" }}
+       
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" color="teal" textAlign="center">
-            <Image src="https://labellefoundation.org/wp-content/uploads/2022/03/Labelle_Logo_Desing_Only.png" /> Log-in to your
+          <Header as="h2" color="blue" textAlign="center">
+            <Image src="https://labellefoundation.org/wp-content/uploads/2022/03/cropped-Labelle_Logo_Desing_Only.png" /> Log-in to your
             account
           </Header>
           <Form autoComplete="off" onSubmit={handleSubmit}>
