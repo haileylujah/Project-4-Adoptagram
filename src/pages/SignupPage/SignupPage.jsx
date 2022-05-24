@@ -60,13 +60,13 @@ export default function SignUpPage(props) {
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
    <Grid.Column style={{ maxWidth: 450 }}>
      <Header as="h2" color="teal" textAlign="center">
-       <Image src="https://www.nicepng.com/png/detail/647-6472469_we-provide-emergency-shelter-and-affordable-housing-blue.png" /> Sign Up
+       <Image src="https://labellefoundation.org/wp-content/uploads/2022/03/cropped-Labelle_Logo_Desing_Only.png" /> Sign Up
      </Header>
      <Form autoComplete="off" onSubmit={handleSubmit}>
        <Segment stacked>
          <Form.Input
            name="username"
-           placeholder="username"
+           placeholder="Username"
            value={state.username}
            onChange={handleChange}
            required
@@ -74,7 +74,7 @@ export default function SignUpPage(props) {
          <Form.Input
            type="email"
            name="email"
-           placeholder="email"
+           placeholder="Email"
            value={state.email}
            onChange={handleChange}
            required
@@ -82,7 +82,7 @@ export default function SignUpPage(props) {
          <Form.Input
            name="password"
            type="password"
-           placeholder="password"
+           placeholder="Password"
            value={state.password}
            onChange={handleChange}
            required
@@ -103,7 +103,7 @@ export default function SignUpPage(props) {
              onChange={handleFileInput}
            />
          </Form.Field>
-         <Button color="pink" type="submit" className="btn">
+         <Button color="blue" type="submit" className="btn">
            Signup
          </Button>
        </Segment>

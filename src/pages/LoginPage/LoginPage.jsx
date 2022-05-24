@@ -39,12 +39,12 @@ export default function LoginPage(props) {
     <>
       <Grid
         textAlign="center"
-       
+        style={{ height: "100vh" }}
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as="h2" color="teal" textAlign="center">
-            <Image src="https://i.imgur.com/s4LrnlU.png" /> Log-in to your
+            <Image src="https://labellefoundation.org/wp-content/uploads/2022/03/Labelle_Logo_Desing_Only.png" /> Log-in to your
             account
           </Header>
           <Form autoComplete="off" onSubmit={handleSubmit}>
@@ -52,7 +52,7 @@ export default function LoginPage(props) {
               <Form.Input
                 type="username"
                 name="username"
-                placeholder="username"
+                placeholder="Username"
                 value={state.username}
                 onChange={handleChange}
                 required
@@ -60,13 +60,13 @@ export default function LoginPage(props) {
               <Form.Input
                 name="password"
                 type="password"
-                placeholder="password"
+                placeholder="Password"
                 value={state.password}
                 onChange={handleChange}
                 required
               />
               <Button
-                color="pink"
+                color="blue"
                 fluid
                 size="large"
                 type="submit"
