@@ -17,7 +17,14 @@ function create(req, res){
       const params = {Bucket: 'phtdb', Key: filePath, Body: req.file.buffer};
       s3.upload(params, async function(err, data){
 			    console.log(err, ' from aws')
-          const post = await Post.create({petName: req.body.petName, user: req.user, photoUrl: data.Location});
+          const post = await Post.create({
+            petName: req.body.petName,
+            petSex: req.body.petSex,
+            petAge: req.body.petAge,
+            petBreed: req.body.petBreed,
+            petHealth: req.body.petHealth, 
+            // user: req.user, 
+            photoUrl: data.Location});
           console.log(post)
 			    await post.populate('user');
 		
