@@ -18,7 +18,10 @@ export default function PageHeader({ user, handleLogout }) {
           {/* <h2>Add Pets</h2> */}
         </Link>
       </Header>
-      {/* <Header>ADOPTAGRAM</Header> */}
+      {/* <Header>
+        <Image
+        src=""
+      </Header> */}
       <Header as="h1" floated="right">
         <Link to={`/${user?.username}`}>
           <Image
