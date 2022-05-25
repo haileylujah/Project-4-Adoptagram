@@ -8,6 +8,7 @@ router.post('/signup', upload.single('photo'), usersCtrl.signup);
 router.post('/login', usersCtrl.login);
 router.get('/:username', usersCtrl.profile);
 
+
 /*---------- Protected Routes ----------*/
 
 module.exports = router;

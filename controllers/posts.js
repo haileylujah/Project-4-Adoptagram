@@ -23,7 +23,7 @@ function create(req, res){
             petAge: req.body.petAge,
             petBreed: req.body.petBreed,
             petHealth: req.body.petHealth, 
-            // user: req.user, 
+            user: req.user, 
             photoUrl: data.Location});
           console.log(post)
 			    await post.populate('user');

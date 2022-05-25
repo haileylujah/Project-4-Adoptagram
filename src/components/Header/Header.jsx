@@ -12,7 +12,11 @@ export default function PageHeader({ user, handleLogout }) {
             size="large" 
             name="paw"
             color="blue"></Icon>
-            <sec>Pet List</sec>
+            {/* <sec>Pet List</sec> */}
+        </Link>
+        <Link to="/addpet">
+          {/* <Icon name="plus"></Icon> */}
+          Add Pets
         </Link>
 
       </Header>

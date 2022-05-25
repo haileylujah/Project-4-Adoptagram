@@ -1,44 +1,19 @@
 import React, { useState, useEffect } from "react";
 import PageHeader from "../../components/Header/Header";
 import AddPostForm from "../../components/AddPostForm/AddPostForm";
-import PostGallery from "../../components/PostGallery/PostGallery";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loading from "../../components/Loader/Loader";
 import * as postsAPI from "../../utils/postApi";
-import * as likesAPI from '../../utils/likeApi';
 import { Grid } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
-
-export default function Feed({user, handleLogout}) {
+export default function AddPostPage({user, handleLogout}) {
     console.log(postsAPI, " <-- postsAPI")
     const [posts, setPosts] = useState([]); 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
-    async function addLike(postId){
-        try {
-          const data = await likesAPI.create(postId)
-          console.log(data, ' <- the response from the server when we make a like');
-          getPosts(); 
-        } catch(err){
-          console.log(err)
-          setError(err.message)
-        }
-      }
-
-      async function removeLike(likeId){
-        try {
-          const data = await likesAPI.removeLike(likeId);
-          console.log(data, '<-  this is the response from the server when we remove a like')
-          getPosts()
-          
-        } catch(err){
-          console.log(err);
-          setError(err.message);
-        }
-      }
-
-      async function handleAddPost(post) {
+    async function handleAddPost(post) {
         try {
           setLoading(true);
           const data = await postsAPI.create(post); 
@@ -92,25 +67,12 @@ export default function Feed({user, handleLogout}) {
               <PageHeader handleLogout={handleLogout} user={user}/>
             </Grid.Column>
           </Grid.Row>
-          {/* <Grid.Row>
+          <Grid.Row>
             <Grid.Column style={{ maxWidth: 450 }}>
               <AddPostForm handleAddPost={handleAddPost} />
-            </Grid.Column>
-          </Grid.Row> */}
-          <Grid.Row>
-            <Grid.Column style={{ maxWidth: 1500 }}>
-              <PostGallery
-                posts={posts}
-                numPhotosCol={4}
-                isProfile={false}
-                loading={loading}
-                addLike={addLike}
-                removeLike={removeLike}
-                user={user}
-              />
+              
             </Grid.Column>
           </Grid.Row>
         </Grid>
       );
     }
-    

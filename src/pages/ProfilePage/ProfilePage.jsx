@@ -91,10 +91,10 @@ export default function ProfilePage(props) {
       <Grid.Row centered>
         <Grid.Column style={{ maxWidth: 1991 }}>
         <PostGallery
-            isProfile={true}
+            // isProfile={true}
             posts={posts}
-            numPhotosCol={7}
-            user={props.user}
+            // numPhotosCol={7}
+            // user={props.user}
             addLike={addLike}
             removeLike={removeLike}
           />

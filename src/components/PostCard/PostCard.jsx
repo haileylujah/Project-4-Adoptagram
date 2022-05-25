@@ -54,9 +54,11 @@ function PostCard({ post, isProfile, removeLike, addLike, user }) {
         <div>Age: {post.petAge}</div>
         <div>Breed: {post.petBreed}</div>
         <div>Health Condition: {post.petHealth}</div>
+
         </Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
+      <p><h5>Like me if you think I am CUTE! :3</h5></p>
         <Icon
           name={"heart"}
           size="large"
