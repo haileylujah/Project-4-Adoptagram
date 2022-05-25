@@ -6,24 +6,16 @@ export default function PageHeader({ user, handleLogout }) {
     console.log(user, 'user in header')
   return (
     <Segment clearing>
+
       <Header as="h1" floated="left">
         <Link to="/">
-          <Icon 
-            size="large" 
-            name="paw"
-            color="blue"></Icon>
+        <Image src="https://github.com/haileylujah/Project-4-Adoptagram/blob/master/public/logo.png?raw=true"></Image>
         </Link>
-        <Link to="/addpet">
-          <Icon name="add"></Icon>
-          {/* <h2>Add Pets</h2> */}
-        </Link>
+
       </Header>
-      {/* <Header>
-        <Image
-        src=""
-      </Header> */}
+
       <Header as="h1" floated="right">
-        <Link to={`/${user?.username}`}>
+      <Link to={`/${user?.username}`}>
           <Image
             src={
               user?.photoUrl
@@ -33,10 +25,26 @@ export default function PageHeader({ user, handleLogout }) {
             avatar
           ></Image>
         </Link>
+        <span> </span>
+      <Link to="/addpet">
+          <Icon 
+          size="small"
+          name="add">
+          </Icon>
+          {/* Add Pet */}
+        </Link>
+
+
+        <span> </span>
         <Link to="" onClick={handleLogout}>
-          <sec>Logout</sec>
+        <Icon
+        size="small"
+        name="logout">
+        </Icon>
+        {/* Logout */}
         </Link>
       </Header>
+
     </Segment>
   );
 }
