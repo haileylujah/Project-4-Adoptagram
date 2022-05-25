@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PageHeader from "../../components/Header/Header";
-import AddPostForm from "../../components/AddPostForm/AddPostForm";
+// import AddPostForm from "../../components/AddPostForm/AddPostForm";
 import PostGallery from "../../components/PostGallery/PostGallery";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loading from "../../components/Loader/Loader";
@@ -38,18 +38,18 @@ export default function Feed({user, handleLogout}) {
         }
       }
 
-      async function handleAddPost(post) {
-        try {
-          setLoading(true);
-          const data = await postsAPI.create(post); 
-          console.log(data, " this is response from the server, in handleAddPost");
-          setPosts([data.post, ...posts]);
-          setLoading(false);
-        } catch (err) {
-          console.log(err);
-          setError(err.message);
-        }
-      }
+      // async function handleAddPost(post) {
+      //   try {
+      //     setLoading(true);
+      //     const data = await postsAPI.create(post); 
+      //     console.log(data, " this is response from the server, in handleAddPost");
+      //     setPosts([data.post, ...posts]);
+      //     setLoading(false);
+      //   } catch (err) {
+      //     console.log(err);
+      //     setError(err.message);
+      //   }
+      // }
 
       async function getPosts() {
         try {

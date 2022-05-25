@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { navigate, useNavigate } from 'react-router';
 import { Button, Form, Grid, Segment } from 'semantic-ui-react'
 
 export default function AddPetForm(props){
+  const navigate = useNavigate();
   const [selectedFile, setSelectedFile] = useState('')
   const [state, setState] = useState({
     petName: '',
@@ -25,6 +26,7 @@ export default function AddPetForm(props){
 
   function handleSubmit(e){
     e.preventDefault();
+    navigate('/');
              
     const formData = new FormData()
     formData.append('photo', selectedFile)
@@ -43,7 +45,7 @@ export default function AddPetForm(props){
       <Grid.Column style={{ maxWidth: 450 }}>
         <Segment>
         
-            <Form  autoComplete="off" onSubmit={handleSubmit}>
+            <Form autoComplete="off" onSubmit={handleSubmit}>
             
               <Form.Input
                   className="form-control"
@@ -92,12 +94,10 @@ export default function AddPetForm(props){
                 placeholder="upload image"
                 onChange={handleFileInput}
               />   
-                <Button 
+              <Button 
                 color='blue'
                 type="submit"
-                
-                className="btn"
-              >
+                className="btn">
               ADD PET
               </Button>
             </Form>

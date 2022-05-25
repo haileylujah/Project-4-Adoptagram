@@ -5,7 +5,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loading from "../../components/Loader/Loader";
 import * as postsAPI from "../../utils/postApi";
 import { Grid } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+
 
 export default function AddPostPage({user, handleLogout}) {
     console.log(postsAPI, " <-- postsAPI")
@@ -70,7 +70,6 @@ export default function AddPostPage({user, handleLogout}) {
           <Grid.Row>
             <Grid.Column style={{ maxWidth: 450 }}>
               <AddPostForm handleAddPost={handleAddPost} />
-              
             </Grid.Column>
           </Grid.Row>
         </Grid>
