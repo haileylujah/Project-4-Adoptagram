@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Grid, Segment } from "semantic-ui-react";
+import { Image, Grid, Segment, Icon } from "semantic-ui-react";
 
 function ProfileBio({ user }) {
   return (
@@ -21,7 +21,7 @@ function ProfileBio({ user }) {
             <h3>{user.username}</h3>
           </Segment>
           <Segment>
-            <span><h4>My Cutie Pie Collection</h4></span>
+            <span><h4><Icon name="heart"></Icon>My Cutie Pie Collection  <Icon name="heart"></Icon></h4></span>
           </Segment>
         </Grid.Column>
       </Grid.Row>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { navigate, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Button, Form, Grid, Segment } from 'semantic-ui-react'
 
 export default function AddPetForm(props){
@@ -26,7 +26,7 @@ export default function AddPetForm(props){
 
   function handleSubmit(e){
     e.preventDefault();
-    navigate('/');
+    navigate("/");
              
     const formData = new FormData()
     formData.append('photo', selectedFile)
@@ -36,7 +36,6 @@ export default function AddPetForm(props){
     formData.append('petBreed', state.petBreed)
     formData.append('petHealth', state.petHealth)
     props.handleAddPost(formData); 
-
   }
 
   return (

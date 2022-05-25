@@ -39,7 +39,7 @@ function App() {
         />
         <Route
           path="/addpet"
-          element={<AddPostPage user={user} handleSignUpOrLogin={handleLogout} />}
+          element={<AddPostPage user={user} handleLogout={handleLogout} />}
         />
         <Route 
           path="/:username" 

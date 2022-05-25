@@ -12,14 +12,13 @@ export default function PageHeader({ user, handleLogout }) {
             size="large" 
             name="paw"
             color="blue"></Icon>
-            {/* <sec>Pet List</sec> */}
         </Link>
         <Link to="/addpet">
-          {/* <Icon name="plus"></Icon> */}
-          Add Pets
+          <Icon name="add"></Icon>
+          {/* <h2>Add Pets</h2> */}
         </Link>
-
       </Header>
+      {/* <Header>ADOPTAGRAM</Header> */}
       <Header as="h1" floated="right">
         <Link to={`/${user?.username}`}>
           <Image
@@ -32,7 +31,7 @@ export default function PageHeader({ user, handleLogout }) {
           ></Image>
         </Link>
         <Link to="" onClick={handleLogout}>
-          <sec>Adios</sec>
+          <sec>Logout</sec>
         </Link>
       </Header>
     </Segment>
