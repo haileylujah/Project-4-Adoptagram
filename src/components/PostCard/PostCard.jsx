@@ -48,7 +48,6 @@ function PostCard({ post, isProfile, removeLike, addLike, user }) {
       <Image src={`${post.photoUrl}`} wrapped ui={false} />
       <Card.Content>
         <Card.Description>
-    {/* need to fix to show all the information on the card */}
         <div>Name: {post.petName}</div> 
         <div>Sex: {post.petSex}</div>
         <div>Age: {post.petAge}</div>

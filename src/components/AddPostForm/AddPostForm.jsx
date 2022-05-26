@@ -26,7 +26,7 @@ export default function AddPetForm(props){
 
   function handleSubmit(e){
     e.preventDefault();
-    navigate("/");
+
              
     const formData = new FormData()
     formData.append('photo', selectedFile)
@@ -36,6 +36,7 @@ export default function AddPetForm(props){
     formData.append('petBreed', state.petBreed)
     formData.append('petHealth', state.petHealth)
     props.handleAddPost(formData); 
+    navigate("/");
   }
 
   return (
