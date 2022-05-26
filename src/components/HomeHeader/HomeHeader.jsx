@@ -54,7 +54,7 @@ export default function HomeHeader(props) {
                   </Icon>
                 </Link>
                 <span> </span>
-                <Link to="/home" onClick={handleLogout}>
+                <Link to="/" onClick={handleLogout}>
                 <Icon
                 size="mid"
                 name="power off">

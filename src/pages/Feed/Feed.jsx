@@ -80,7 +80,7 @@ export default function Feed({user, handleLogout}) {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Link to="/home">
+            <Link to="/">
           <Image 
           size="tiny"
           src="https://labellefoundation.org/wp-content/uploads/2022/03/cropped-Labelle_Logo_Desing_Only.png" />

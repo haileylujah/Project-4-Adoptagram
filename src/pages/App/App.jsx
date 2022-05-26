@@ -32,7 +32,7 @@ function App() {
           element={<Feed user={user} handleLogout={handleLogout} />}
         />
         <Route
-          path="/home"
+          path="/"
           element={<HomePage user={user} handleLogout={handleLogout} />}
         />
         <Route
@@ -70,7 +70,7 @@ function App() {
           element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
         <Route
-          path="/home"
+          path="/"
           element={<HomePage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
         <Route path="/*" element={<Navigate to="/home" />} />
