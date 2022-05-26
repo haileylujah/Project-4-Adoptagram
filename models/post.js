@@ -10,7 +10,7 @@ const postSchema = new mongoose.Schema({
   photoUrl: String,
   petName: String,
   petSex: String,
-  petAge: Number,
+  petAge: String,
   petBreed: String,
   petHealth: String,
   likes: [likesSchema]

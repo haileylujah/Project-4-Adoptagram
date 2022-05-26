@@ -17,6 +17,7 @@ export default function PageHeader({ user, handleLogout }) {
       <Header as="h1" floated="right">
       <Link to={`/${user?.username}`}>
           <Image
+          size="tiny"
             src={
               user?.photoUrl
                 ? user?.photoUrl
@@ -26,9 +27,15 @@ export default function PageHeader({ user, handleLogout }) {
           ></Image>
         </Link>
         <span> </span>
+        <Link to="/likes">
+          <Icon 
+          size="mid"
+          name="heart">
+          </Icon>
+        </Link>
       <Link to="/addpet">
           <Icon 
-          size="small"
+          size="mid"
           name="add">
           </Icon>
           {/* Add Pet */}
@@ -38,7 +45,7 @@ export default function PageHeader({ user, handleLogout }) {
         <span> </span>
         <Link to="" onClick={handleLogout}>
         <Icon
-        size="small"
+        size="mid"
         name="logout">
         </Icon>
         {/* Logout */}

@@ -7,6 +7,7 @@ import * as postsAPI from "../../utils/postApi";
 import { Grid } from "semantic-ui-react";
 
 
+
 export default function AddPostPage({user, handleLogout}) {
     console.log(postsAPI, " <-- postsAPI")
     const [posts, setPosts] = useState([]); 
@@ -20,6 +21,7 @@ export default function AddPostPage({user, handleLogout}) {
           console.log(data, " this is response from the server, in handleAddPost");
           setPosts([data.post, ...posts]);
           setLoading(false);
+
         } catch (err) {
           console.log(err);
           setError(err.message);

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import PageHeader from "../../components/Header/Header";
 // import AddPostForm from "../../components/AddPostForm/AddPostForm";
-import PostGallery from "../../components/PostGallery/PostGallery";
+import ProfileGallery from "../../components/ProfileGallery/ProfileGallery";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loading from "../../components/Loader/Loader";
 import * as postsAPI from "../../utils/postApi";
 import * as likesAPI from '../../utils/likeApi';
-import { Grid, Icon, Segment, Image } from "semantic-ui-react";
+import { Grid, Segment, Icon } from "semantic-ui-react";
 
 
 export default function Feed({user, handleLogout}) {
@@ -37,19 +37,6 @@ export default function Feed({user, handleLogout}) {
           setError(err.message);
         }
       }
-
-      // async function handleAddPost(post) {
-      //   try {
-      //     setLoading(true);
-      //     const data = await postsAPI.create(post); 
-      //     console.log(data, " this is response from the server, in handleAddPost");
-      //     setPosts([data.post, ...posts]);
-      //     setLoading(false);
-      //   } catch (err) {
-      //     console.log(err);
-      //     setError(err.message);
-      //   }
-      // }
 
       async function getPosts() {
         try {
@@ -92,25 +79,12 @@ export default function Feed({user, handleLogout}) {
               <PageHeader handleLogout={handleLogout} user={user}/>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
-            <Grid.Column >
-            {/* <Segment vertical>
-            <h1>Adopting Instead of Buying</h1>
-            </Segment> */}
-            <Image centered
-            src="https://universityofbarkley.com/wp-content/uploads/2020/07/adopt-shop-lettering-background_106024-75.jpg"></Image>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column textAlign="center">
-              <h2>
-                Please Contact: 800-ADOPT-IT
-              </h2>
-            </Grid.Column>
-          </Grid.Row>
+          <Segment>
+            <span><h4><Icon name="heart"></Icon>My Cutie Pie Collection  <Icon name="heart"></Icon></h4></span>
+          </Segment>
           <Grid.Row>
             <Grid.Column style={{ maxWidth: 1500 }}>
-              <PostGallery
+              <ProfileGallery
                 posts={posts}
                 numPhotosCol={4}
                 isProfile={false}

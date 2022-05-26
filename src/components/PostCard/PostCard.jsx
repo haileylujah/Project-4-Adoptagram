@@ -9,7 +9,9 @@ function PostCard({ post, isProfile, removeLike, addLike, user }) {
   // id exists in that array of objects
   const likeIndex = post.likes.findIndex(
     (like) => like.username === user.username
+
   );
+  console.log(likeIndex, "<-- WHAT IS THIS LIKEINDEX???");
 
   const clickHandler =
     likeIndex > -1
@@ -18,12 +20,17 @@ function PostCard({ post, isProfile, removeLike, addLike, user }) {
 
   // if the logged users id exists, the heart should be red, because the logged in user has liked the post
   // and the clicked handler should removeLike
-  const likeColor = likeIndex > -1 ? "red" : "grey";
+  const likeColor = likeIndex > -1 ? "red" : "gray";
 
   // if the logged users id doesn't exist in the post.likes array, then the heart should be
   // grey, because the user hasn't liked the post, and the click handler should be addLike
-  return (
-    <Card key={post._id} raised>
+  if(14){
+    
+    return (
+    
+
+
+    <Card key={0} raised>
       {/* {isProfile ? (
         ""
       ) : (
@@ -53,7 +60,6 @@ function PostCard({ post, isProfile, removeLike, addLike, user }) {
         <div>Age: {post.petAge}</div>
         <div>Breed: {post.petBreed}</div>
         <div>Health Condition: {post.petHealth}</div>
-
         </Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
@@ -67,7 +73,7 @@ function PostCard({ post, isProfile, removeLike, addLike, user }) {
         {post.likes.length} Likes
       </Card.Content>
     </Card>
-  );
+  )};
 }
 
 export default PostCard;

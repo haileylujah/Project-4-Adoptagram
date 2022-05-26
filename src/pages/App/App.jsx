@@ -6,6 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import Feed from '../Feed/Feed'; 
 import ProfilePage from '../ProfilePage/ProfilePage';
+import LikePage from '../LikePage/LikePage';
 import AddPostPage from '../AddPostPage/AddPostPage';
 
 function App() {
@@ -44,6 +45,10 @@ function App() {
         <Route 
           path="/:username" 
           element={<ProfilePage user={user} handleLogout={handleLogout}  />}
+         />
+        <Route 
+          path="/likes" 
+          element={<LikePage user={user} handleLogout={handleLogout}  />}
          />
       </Routes>
       )
