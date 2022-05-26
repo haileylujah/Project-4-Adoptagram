@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -31,7 +31,10 @@ function App() {
           path="/pets"
           element={<Feed user={user} handleLogout={handleLogout} />}
         />
-
+        <Route
+          path="/home"
+          element={<HomePage user={user} handleLogout={handleLogout} />}
+        />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
@@ -67,10 +70,10 @@ function App() {
           element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
         <Route
-          path="/"
+          path="/home"
           element={<HomePage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
-        {/* <Route path="/*" element={<Navigate to="/login" />} /> */}
+        <Route path="/*" element={<Navigate to="/home" />} />
       </Routes>
     );
   }

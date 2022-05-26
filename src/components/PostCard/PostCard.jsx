@@ -31,35 +31,15 @@ function PostCard({ post, isProfile, removeLike, addLike, user }) {
 
 
     <Card key={0} raised>
-      {/* {isProfile ? (
-        ""
-      ) : (
-        <Card.Content textAlign="left">
-          <Card.Header>
-            <Link to={`/${post.user.username}`}>
-              <Image
-                size="large"
-                avatar
-                src={
-                  post.user.photoUrl
-                    ? post.user.photoUrl
-                    : "https://react.semantic-ui.com/images/wireframe/square-image.png"
-                }
-              />
-              {post.user.username}
-            </Link>
-          </Card.Header>
-        </Card.Content>
-      )} */}
 
       <Image src={`${post.photoUrl}`} wrapped ui={false} />
       <Card.Content>
         <Card.Description>
-        <div>Name: {post.petName}</div> 
-        <div>Sex: {post.petSex}</div>
-        <div>Age: {post.petAge}</div>
-        <div>Breed: {post.petBreed}</div>
-        <div>Health Condition: {post.petHealth}</div>
+        <h2>{post.petName}</h2>
+        <p>Sex: {post.petSex}</p>
+        <p>Age: {post.petAge}</p>
+        <p>Breed: {post.petBreed}</p>
+        <p>Health Condition: {post.petHealth}</p>
         </Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>

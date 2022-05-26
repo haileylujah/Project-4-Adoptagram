@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Grid, Segment, Icon } from "semantic-ui-react";
+import { Image, Grid, Segment } from "semantic-ui-react";
 
 function ProfileBio({ user }) {
   return (

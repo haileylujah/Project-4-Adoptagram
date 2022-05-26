@@ -39,10 +39,9 @@ export default function PageHeader({ user, handleLogout }) {
           size="mid"
           name="edit">
           </Icon>
-          {/* Add Pet */}
         </Link>
         <span> </span>
-        <Link to="/" onClick={handleLogout}>
+        <Link to="/home" onClick={handleLogout}>
         <Icon
         size="mid"
         name="power off">

@@ -10,26 +10,24 @@ Adopt! DON'T SHOP
 
 
 ## Technologies Used
-* HTML
-* CSS
-* JavaScript
-* Python
-* Django
-* PostgreSQL
+* MongoDB/Mongoose
+* Express
+* React
+* Node
 * AWS
-* API
 * Heroku
 
 
 ## Links for more
 
-* [Trello](https://trello.com/b/b7bpeX8Y/project-3)
-* [Pitch Deck](https://app.pitch.com/app/presentation/07652776-e827-42f0-b57f-4c3102188732/e0716f67-ea79-42ba-b461-8beaa93fddc9)
+* [Trello](https://trello.com/invite/b/y0kinkKv/ec936307a472b6ec419279ffcc169d94/final)
+* [800-ADOPT-ME](https://adoptagram.herokuapp.com/)
 
 
 ## Next Steps
-* AAU (Vet):  After a surgery I want to set up the system to send them daily reminder emails to log in and track progress without my having to do anything else, for X number of days.  Because I'm busy and I want the info.
-
-* AAU (Vet): I want my clients to rate how their pet is feeling 1-5 and I want that to be displayed in a graph so I can easily see progress.
-
-* AAU (Client): When I update I want it to send an email to my vet, because it might be urgent.
+* Add APIs
+* Better CSS
+* Add detail page for each pet
+* AAU, I want to add comments
+* AAU, I want to add more than one pictures for my pets
+* AAU, I want to be able to edit my posts

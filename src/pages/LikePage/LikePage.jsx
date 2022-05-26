@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import PageHeader from "../../components/Header/Header";
-// import AddPostForm from "../../components/AddPostForm/AddPostForm";
 import ProfileGallery from "../../components/ProfileGallery/ProfileGallery";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loading from "../../components/Loader/Loader";

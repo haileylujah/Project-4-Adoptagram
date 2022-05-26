@@ -48,7 +48,7 @@ export default function SignUpPage(props) {
         
         await userService.signup(formData)
         props.handleSignUpOrLogin();
-        navigate('/')
+        navigate('/pets')
 
       } catch(err){
         console.log(err.message);

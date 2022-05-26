@@ -6,6 +6,7 @@ import Loading from "../../components/Loader/Loader";
 import * as postsAPI from "../../utils/postApi";
 import * as likesAPI from '../../utils/likeApi';
 import { Grid, Image } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 export default function Feed({user, handleLogout}) {
     console.log(postsAPI, " <-- postsAPI")
@@ -79,9 +80,11 @@ export default function Feed({user, handleLogout}) {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
+            <Link to="/home">
           <Image 
           size="tiny"
           src="https://labellefoundation.org/wp-content/uploads/2022/03/cropped-Labelle_Logo_Desing_Only.png" />
+          </Link>
           </Grid.Row>
           <Grid.Row>
             <h2>Please Contact: 800-ADOPT-ME</h2>
