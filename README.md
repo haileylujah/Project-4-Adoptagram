@@ -1,35 +1,35 @@
 # Adoptagram
 
-### **ADOPT! DON'T SHOP**
+Adopt! DON'T SHOP
+
+[800-ADOPT-ME](https://adoptagram.herokuapp.com/)
 
 
-#### Setup your git repo
+## Screenshot
+![Homepage](https://github.com/haileylujah/Project-3-phtdb/blob/master/main_app/imgs/Homepage.png?raw=true)
 
-1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-2. Then you can run the following commands in the root of your project 
 
-```
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be, look at the address in the code github gives you!
-git push -u origin main
-```
+## Technologies Used
+* HTML
+* CSS
+* JavaScript
+* Python
+* Django
+* PostgreSQL
+* AWS
+* API
+* Heroku
 
-#### Setup the App
 
-```npm install```
+## Links for more
 
-*DOTENV*
+* [Trello](https://trello.com/b/b7bpeX8Y/project-3)
+* [Pitch Deck](https://app.pitch.com/app/presentation/07652776-e827-42f0-b57f-4c3102188732/e0716f67-ea79-42ba-b461-8beaa93fddc9)
 
-`touch .env`
 
-add your variables
+## Next Steps
+* AAU (Vet):  After a surgery I want to set up the system to send them daily reminder emails to log in and track progress without my having to do anything else, for X number of days.  Because I'm busy and I want the info.
 
-```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=catcollectorone
-SECRET=mysecretforjwt
-```
+* AAU (Vet): I want my clients to rate how their pet is feeling 1-5 and I want that to be displayed in a graph so I can easily see progress.
 
-The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
+* AAU (Client): When I update I want it to send an email to my vet, because it might be urgent.

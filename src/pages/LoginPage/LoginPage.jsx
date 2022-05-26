@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "./LoginPage.css";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import userService from "../../utils/userService";
-import { useNavigate, Link } from "react-router-dom";
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { useNavigate } from "react-router-dom";
+import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react'
+import HomeHeader from "../../components/HomeHeader/HomeHeader";
 
 
 
@@ -29,19 +30,24 @@ export default function LoginPage(props) {
     try {
       await userService.login(state);
       props.handleSignUpOrLogin();
-      navigate("/");
+      navigate("/pets");
     } catch (err) {
       setError(err.message);
     }
   }
 
   return (
-    <>
+
       <Grid
         textAlign="center"
-        style={{ height: "100vh" }}
         verticalAlign="middle"
       >
+                  <Grid.Row>
+            <Grid.Column>
+              <HomeHeader />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as="h2" color="blue" textAlign="center">
             <Image src="https://labellefoundation.org/wp-content/uploads/2022/03/cropped-Labelle_Logo_Desing_Only.png" /> Log-in to your
@@ -76,12 +82,10 @@ export default function LoginPage(props) {
               </Button>
             </Segment>
           </Form>
-          <Message>
-            New to us? <Link to="/signup">Sign Up</Link>
-          </Message>
           {error ? <ErrorMessage error={error} /> : null}
         </Grid.Column>
+        </Grid.Row>
       </Grid>
-    </>
+
   );
 }

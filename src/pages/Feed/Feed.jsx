@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import PageHeader from "../../components/Header/Header";
-// import AddPostForm from "../../components/AddPostForm/AddPostForm";
 import PostGallery from "../../components/PostGallery/PostGallery";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loading from "../../components/Loader/Loader";
 import * as postsAPI from "../../utils/postApi";
 import * as likesAPI from '../../utils/likeApi';
-import { Grid, Icon, Segment, Image } from "semantic-ui-react";
-
+import { Grid, Image } from "semantic-ui-react";
 
 export default function Feed({user, handleLogout}) {
     console.log(postsAPI, " <-- postsAPI")
@@ -38,19 +36,7 @@ export default function Feed({user, handleLogout}) {
         }
       }
 
-      // async function handleAddPost(post) {
-      //   try {
-      //     setLoading(true);
-      //     const data = await postsAPI.create(post); 
-      //     console.log(data, " this is response from the server, in handleAddPost");
-      //     setPosts([data.post, ...posts]);
-      //     setLoading(false);
-      //   } catch (err) {
-      //     console.log(err);
-      //     setError(err.message);
-      //   }
-      // }
-
+      
       async function getPosts() {
         try {
           const data = await postsAPI.getAll();
@@ -93,20 +79,12 @@ export default function Feed({user, handleLogout}) {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column >
-            {/* <Segment vertical>
-            <h1>Adopting Instead of Buying</h1>
-            </Segment> */}
-            <Image centered
-            src="https://universityofbarkley.com/wp-content/uploads/2020/07/adopt-shop-lettering-background_106024-75.jpg"></Image>
-            </Grid.Column>
+          <Image 
+          size="tiny"
+          src="https://labellefoundation.org/wp-content/uploads/2022/03/cropped-Labelle_Logo_Desing_Only.png" />
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column textAlign="center">
-              <h2>
-                Please Contact: 800-ADOPT-IT
-              </h2>
-            </Grid.Column>
+            <h2>Please Contact: 800-ADOPT-ME</h2>
           </Grid.Row>
           <Grid.Row>
             <Grid.Column style={{ maxWidth: 1500 }}>

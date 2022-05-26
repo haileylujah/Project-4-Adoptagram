@@ -8,7 +8,7 @@ export default function PageHeader({ user, handleLogout }) {
     <Segment clearing>
 
       <Header as="h1" floated="left">
-        <Link to="/">
+        <Link to="/pets">
         <Image src="https://github.com/haileylujah/Project-4-Adoptagram/blob/master/public/logo.png?raw=true"></Image>
         </Link>
 
@@ -33,22 +33,20 @@ export default function PageHeader({ user, handleLogout }) {
           name="heart">
           </Icon>
         </Link>
+        <span> </span>
       <Link to="/addpet">
           <Icon 
           size="mid"
-          name="add">
+          name="edit">
           </Icon>
           {/* Add Pet */}
         </Link>
-
-
         <span> </span>
-        <Link to="" onClick={handleLogout}>
+        <Link to="/" onClick={handleLogout}>
         <Icon
         size="mid"
-        name="logout">
+        name="power off">
         </Icon>
-        {/* Logout */}
         </Link>
       </Header>
 

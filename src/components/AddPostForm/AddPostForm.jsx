@@ -36,7 +36,7 @@ export default function AddPetForm(props){
     formData.append('petBreed', state.petBreed)
     formData.append('petHealth', state.petHealth)
     props.handleAddPost(formData); 
-    navigate("/");
+    navigate("/pets");
 
   }
 

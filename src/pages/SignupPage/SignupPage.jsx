@@ -3,6 +3,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react'
 import userService from "../../utils/userService";
 import { useNavigate } from "react-router-dom";
+import HomeHeader from "../../components/HomeHeader/HomeHeader";
 
 
 export default function SignUpPage(props) {
@@ -58,7 +59,15 @@ export default function SignUpPage(props) {
 
 
 return (
-  <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
+  <Grid
+  textAlign="center"
+  verticalAlign="middle"
+>           <Grid.Row>
+            <Grid.Column>
+              <HomeHeader />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
     <Grid.Column style={{ maxWidth: 450 }}>
       <Header as="h2" color="blue" textAlign="center">
         <Image src="https://labellefoundation.org/wp-content/uploads/2022/03/cropped-Labelle_Logo_Desing_Only.png" /> Sign Up
@@ -111,6 +120,7 @@ return (
         {error ? <ErrorMessage error={error} /> : null}
       </Form>
     </Grid.Column>
+    </Grid.Row>
   </Grid>
 );
 }
