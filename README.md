@@ -1,8 +1,6 @@
-## Setup 
+# Adoptagram
 
-1. Clone the repo
-2. Rename the folder to your Project, you can use the `mv` command like `mv mern-boilerplate yourprojectname`
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+### **ADOPT! DON'T SHOP**
 
 
 #### Setup your git repo
