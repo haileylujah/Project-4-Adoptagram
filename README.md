@@ -6,7 +6,7 @@ Adopt! DON'T SHOP
 
 
 ## Screenshot
-![Homepage](https://github.com/haileylujah/Project-3-phtdb/blob/master/main_app/imgs/Homepage.png?raw=true)
+![Homepage](https://github.com/haileylujah/Project-4-Adoptagram/blob/master/public/Home.png?raw=true)
 
 
 ## Technologies Used
